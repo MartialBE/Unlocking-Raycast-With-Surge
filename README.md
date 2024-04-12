@@ -1,6 +1,9 @@
 # Unlocking-Raycast-With-Surge
 
-**写在前面：在使用之前，请明确这是破解行为，是不值得被提倡的。我之所以仍然保留此仓库，原因是我认为现有的代码的所有 AI 功能均为自己的 Key 实现，尚且没有同 Raycast 出现明确的利益冲突。**
+> [!WARNING]
+> This project is for educational purposes only.
+> Please do not use it for commercial purposes.
+
 
 利用 Surge 的 MiTM 功能拦截请求，并利用 Docker 服务模拟后端操作，从而实现 Raycast 的激活。
 
