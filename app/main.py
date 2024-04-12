@@ -337,10 +337,10 @@ else:
     openai_client = openai.OpenAI()
 
 RAYCAST_DEFAULT_MODELS = {
-    "chat": "openai-gpt-4-turbo-preview",
-    "quick_ai": "openai-gpt-4-turbo-preview",
-    "commands": "openai-gpt-4-turbo-preview",
-    "api": "openai-gpt-4-turbo-preview",
+    "chat": "openai-gpt-4-turbo",
+    "quick_ai": "openai-gpt-4-turbo",
+    "commands": "openai-gpt-4-turbo",
+    "api": "openai-gpt-4-turbo",
 }
 
 
