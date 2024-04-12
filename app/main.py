@@ -77,46 +77,220 @@ FORCE_MODEL = os.environ.get("FORCE_MODEL", None)
 SERVICE_PROVIDERS = {
     "openai": [
         {
+            "id": "openai-gpt-3.5-turbo-instruct",
+            "description": "",
+            "features": ["commands", "api", "emoji_search"],
+            "provider": "openai",
+            "speed": 3,
+            "intelligence": 3,
+            "provider_name": "OpenAI",
+            "provider_brand": "openai",
+            "requires_better_ai": False,
+            "context": 4,
+            "capabilities": {},
+            "suggestions": [],
+            "in_better_ai_subscription": False,
+            "model": "gpt-3.5-turbo-instruct",
+            "name": "GPT-3.5 Turbo Instruct",
+            "status": None,
+        },
+        {
             "id": "openai-gpt-3.5-turbo",
+            "description": "GPT-3.5 Turbo is OpenAI’s fastest model, making it ideal for tasks that require quick response times with basic language processing capabilities.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "openai",
+            "speed": 3,
+            "intelligence": 3,
+            "provider_name": "OpenAI",
+            "provider_brand": "openai",
+            "requires_better_ai": False,
+            "context": 16,
+            "capabilities": {"image_generation": "full", "web_search": "full"},
+            "suggestions": ["chat", "quick_ai", "commands"],
+            "in_better_ai_subscription": False,
             "model": "gpt-3.5-turbo",
             "name": "GPT-3.5 Turbo",
-            "provider": "openai",
-            "provider_name": "OpenAI",
-            "requires_better_ai": False,
-            "features": [
-                "chat",
-                "quick_ai",
-                "commands",
-                "api",
-            ],
+            "status": None,
         },
         {
-            "id": "openai-gpt-3.5-turbo-0125",
-            "model": "gpt-3.5-turbo-0125",
-            "name": "GPT-3.5 Turbo 16k",
+            "id": "openai-gpt-4",
+            "description": "GPT-4 is OpenAI’s most capable model with broad general knowledge, allowing it to follow complex instructions and solve difficult problems.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
             "provider": "openai",
+            "speed": 1,
+            "intelligence": 4,
             "provider_name": "OpenAI",
-            "requires_better_ai": False,
-            "features": [
-                "chat",
-                "quick_ai",
-                "commands",
-                "api",
-            ],
+            "provider_brand": "openai",
+            "requires_better_ai": True,
+            "context": 8,
+            "capabilities": {"image_generation": "full", "web_search": "full"},
+            "suggestions": ["chat"],
+            "in_better_ai_subscription": True,
+            "model": "gpt-4",
+            "name": "GPT-4",
+            "status": "beta",
         },
         {
-            "id": "openai-gpt-4-turbo-preview",
+            "id": "openai-gpt-4-turbo",
+            "description": "GPT-4 Turbo from OpenAI has a big context window that fits hundreds of pages of text, making it a great choice for workloads that involve longer prompts.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "openai",
+            "speed": 2,
+            "intelligence": 5,
+            "provider_name": "OpenAI",
+            "provider_brand": "openai",
+            "requires_better_ai": True,
+            "context": 127,
+            "capabilities": {"image_generation": "full", "web_search": "full"},
+            "suggestions": [],
+            "in_better_ai_subscription": True,
             "model": "gpt-4-turbo-preview",
             "name": "GPT-4 Turbo",
-            "provider": "openai",
-            "provider_name": "OpenAI",
+            "status": "beta",
+        },
+        {
+            "id": "anthropic-claude-haiku",
+            "description": "Claude 3 Haiku is Anthropic's fastest model, with a large context window that makes it ideal for analyzing code, documents, or large amounts of text.\n",
+            "features": ["chat", "quick_ai", "commands", "api"],
+            "provider": "anthropic",
+            "speed": 3,
+            "intelligence": 3,
+            "provider_name": "Anthropic",
+            "provider_brand": "anthropic",
+            "requires_better_ai": False,
+            "context": 200,
+            "capabilities": {"web_search": "full"},
+            "suggestions": ["quick_ai"],
+            "in_better_ai_subscription": False,
+            "model": "claude-3-haiku-20240307",
+            "name": "Claude 3 Haiku",
+            "status": "beta",
+        },
+        {
+            "id": "anthropic-claude-sonnet",
+            "description": "Claude 3 Sonnet from Anthropic strikes a balance between speed and intelligence, making it an ideal assistant for daily tasks like coding and copywriting.\n",
+            "features": ["chat", "quick_ai", "commands", "api"],
+            "provider": "anthropic",
+            "speed": 2,
+            "intelligence": 4,
+            "provider_name": "Anthropic",
+            "provider_brand": "anthropic",
             "requires_better_ai": True,
-            "features": [
-                "chat",
-                "quick_ai",
-                "commands",
-                "api",
-            ],
+            "context": 200,
+            "capabilities": {"web_search": "full"},
+            "suggestions": ["commands"],
+            "in_better_ai_subscription": True,
+            "model": "claude-3-sonnet-20240229",
+            "name": "Claude 3 Sonnet",
+            "status": "beta",
+        },
+        {
+            "id": "anthropic-claude-opus",
+            "description": "Claude 3 Opus is Anthropic's most intelligent model, with best-in-market performance on highly complex tasks. It stands out for remarkable fluency.\n",
+            "features": ["chat", "quick_ai", "commands", "api"],
+            "provider": "anthropic",
+            "speed": 1,
+            "intelligence": 5,
+            "provider_name": "Anthropic",
+            "provider_brand": "anthropic",
+            "requires_better_ai": True,
+            "context": 200,
+            "capabilities": {"web_search": "full"},
+            "suggestions": ["chat"],
+            "in_better_ai_subscription": True,
+            "model": "claude-3-opus-20240229",
+            "name": "Claude 3 Opus",
+            "status": "beta",
+        },
+        {
+            "id": "perplexity-sonar-small-online",
+            "description": "Perplexity's Sonar Small is built for speed. It quickly gives you helpful answers using the latest internet knowledge while minimizing hallucinations.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "perplexity",
+            "speed": 3,
+            "intelligence": 1,
+            "provider_name": "Perplexity",
+            "provider_brand": "perplexity",
+            "requires_better_ai": False,
+            "context": 12,
+            "capabilities": {"web_search": "always_on"},
+            "suggestions": ["quick_ai"],
+            "in_better_ai_subscription": False,
+            "model": "sonar-small-online",
+            "name": "Sonar Small",
+            "status": "beta",
+        },
+        {
+            "id": "perplexity-sonar-medium-online",
+            "description": "Perplexity's most advanced model, Sonar Medium, can handle complex questions. It considers current web knowledge to provide well-reasoned, in-depth answers.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "perplexity",
+            "speed": 2,
+            "intelligence": 2,
+            "provider_name": "Perplexity",
+            "provider_brand": "perplexity",
+            "requires_better_ai": True,
+            "context": 12,
+            "capabilities": {"web_search": "always_on"},
+            "suggestions": ["quick_ai"],
+            "in_better_ai_subscription": True,
+            "model": "sonar-medium-online",
+            "name": "Sonar Medium",
+            "status": "beta",
+        },
+        {
+            "id": "groq-llama2-70b-4096",
+            "description": "Llama 2 70B from Meta is a popular open-source model optimized for dialogues, which can serve as a tool for various text-related tasks. Powered by Groq.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "groq",
+            "speed": 4,
+            "intelligence": 2,
+            "provider_name": "Meta",
+            "provider_brand": "meta",
+            "requires_better_ai": False,
+            "context": 4,
+            "capabilities": {},
+            "suggestions": [],
+            "in_better_ai_subscription": False,
+            "model": "llama2-70b-4096",
+            "name": "Llama 2 70B",
+            "status": "beta",
+        },
+        {
+            "id": "groq-mixtral-8x7b-32768",
+            "description": "Mixtral 8x7B from Mistral is an open-source model that demonstrates high performance in generating code and text at an impressive speed. Powered by Groq.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "groq",
+            "speed": 5,
+            "intelligence": 3,
+            "provider_name": "Mistral",
+            "provider_brand": "mistral",
+            "requires_better_ai": False,
+            "context": 32,
+            "capabilities": {},
+            "suggestions": [],
+            "in_better_ai_subscription": False,
+            "model": "mixtral-8x7b-32768",
+            "name": "Mixtral 8x7B",
+            "status": "beta",
+        },
+        {
+            "id": "perplexity-codellama-70b-instruct",
+            "description": "Code Llama 70B from Meta is an open-source model designed to enhance and speed up coding tasks, making developer workflows faster and more efficient.\n",
+            "features": ["chat", "quick_ai", "commands", "api", "emoji_search"],
+            "provider": "perplexity",
+            "speed": 2,
+            "intelligence": 3,
+            "provider_name": "Meta",
+            "provider_brand": "meta",
+            "requires_better_ai": False,
+            "context": 16,
+            "capabilities": {},
+            "suggestions": ["commands"],
+            "in_better_ai_subscription": False,
+            "model": "codellama-70b-instruct",
+            "name": "Code Llama 70B",
+            "status": "beta",
         },
     ],
 }
@@ -185,16 +359,20 @@ def get_tools(tools: dict):
     format_tools = []
     for tool in tools:
         if "required_environ" in tools[tool]:
-            if any([not os.environ.get(env) for env in tools[tool]["required_environ"]]):
+            if any(
+                [not os.environ.get(env) for env in tools[tool]["required_environ"]]
+            ):
                 continue
-        format_tools.append({
-            "type":"function",
-            "function": {
-                "name": tool,
-                "description": tools[tool]["description"],
-                "parameters": tools[tool]["parameters"],
+        format_tools.append(
+            {
+                "type": "function",
+                "function": {
+                    "name": tool,
+                    "description": tools[tool]["description"],
+                    "parameters": tools[tool]["parameters"],
+                },
             }
-        })
+        )
 
     return format_tools
 
@@ -246,7 +424,7 @@ async def chat_completions_openai(raycast_data: dict):
             query_func = None
             query_extra = None
             try:
-                print(get_tools(OPENAI_TOOLS))
+                # print(get_tools(OPENAI_TOOLS))
                 stream = openai_client.chat.completions.create(
                     model=get_model(raycast_data),
                     messages=openai_messages,
@@ -270,9 +448,7 @@ async def chat_completions_openai(raycast_data: dict):
                                 # 按照 id 查询，如果有对应的 notification 字段，则返回
                                 if "notification" in OPENAI_TOOLS[query_tool_name]:
                                     yield OPENAI_TOOLS[query_tool_name]["notification"]
-                                query_func = OPENAI_TOOLS[query_tool_name][
-                                    "handler"
-                                ]
+                                query_func = OPENAI_TOOLS[query_tool_name]["handler"]
                                 query_extra = OPENAI_TOOLS[query_tool_name][
                                     "extra_messages"
                                 ]
@@ -330,6 +506,8 @@ async def chat_completions_openai(raycast_data: dict):
                                 f"OpenAI response chunk: {chunk.delta.content}"
                             )
                             yield f'data: {json.dumps({"text": chunk.delta.content})}\n\n'
+                return
+
             except openai.APIConnectionError as e:
                 # print(e.__cause__)
                 error_json = {"error": {"message": e.__cause__}}
@@ -359,8 +537,10 @@ async def chat_completions_openai(raycast_data: dict):
 
 
 @app.post("/api/v1/ai/chat_completions")
-async def chat_completions(request: Request):
+async def proxy_chat_completions(request: Request):
+
     raycast_data = await request.json()
+    print(request.headers, request.body)
     if not check_auth(request):
         return Response(status_code=401)
     logger.info(f"Received chat completion request: {raycast_data}")
@@ -454,6 +634,8 @@ async def proxy_me(request: Request):
         data["stripe_subscription_status"] = None
         data["stripe_subscription_interval"] = None
         data["stripe_subscription_current_period_end"] = None
+        # Show walkthrough
+        # data["client_flags"]["pro_plan_walkthrough_shown"] = False
         add_user(request, data["email"])
         content = json.dumps(data, ensure_ascii=False).encode("utf-8")
     return Response(
