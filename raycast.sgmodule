@@ -9,4 +9,4 @@
 hostname = %APPEND% *.raycast.com
 
 [Script]
-raycast-activate-backend.raycast.com = type=http-request,pattern=^https://backend.raycast.com,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/zhuozhiyongde/Unlocking-Raycast-With-Surge/main/activator.js,arguments={{{raycastBackendURL}}}
+raycast-activate-backend.raycast.com = type=http-request,pattern=^https://backend.raycast.com,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/zhuozhiyongde/Unlocking-Raycast-With-Surge/main/activator.js,argument={{{raycastBackendURL}}}
